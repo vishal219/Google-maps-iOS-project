@@ -33,7 +33,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
-                                            <imageReference key="image" image="icons8-menu-20" symbolScale="default"/>
+                                            <imageReference key="image" image="menu-4-24" symbolScale="default"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="medium" weight="medium"/>
                                         </buttonConfiguration>
                                     </button>
@@ -55,7 +55,7 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="list.bullet.rectangle.fill" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="listImage"/>
                                         <connections>
                                             <action selector="changeToMapOrList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="feP-y8-hlY"/>
                                         </connections>
@@ -165,9 +165,9 @@
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
-        <image name="icons8-menu-20" width="20" height="20"/>
-        <image name="list.bullet.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="listImage" width="24" height="24"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="menu-4-24" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

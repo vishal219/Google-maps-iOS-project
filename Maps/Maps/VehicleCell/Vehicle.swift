@@ -37,7 +37,7 @@ class Vehicle: UITableViewCell {
             }
           
             var str = ""
-            let time = Date(timeIntervalSince1970: TimeInterval(truck.lastWaypoint.createTime/1000))
+            let time = Date(timeIntervalSince1970: TimeInterval(truck.lastWaypoint.updateTime/1000))
             if Date().days(from: time) > 0{
                 str = "\(Date().days(from: time)) days"
             }

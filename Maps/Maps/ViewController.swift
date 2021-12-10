@@ -10,6 +10,7 @@ import GoogleMaps
 
 class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate {
     
+    //Outlets:
     @IBOutlet weak var search: UIButton!
     @IBOutlet weak var constraint: NSLayoutConstraint!
     
@@ -20,7 +21,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     @IBOutlet weak var changeView: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
+    //Variables used:
     var trucks : [Truck] = []
     var filteredTrucks : [Truck] = []
     var filterOn:Bool = false
@@ -45,6 +46,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         searchBar.layer.cornerRadius = 8
         searchBar.showsCancelButton = true
     }
+    ///get API data
     func getData(){
         api.getData(completion: { trucklist in
             self.trucks = trucklist
@@ -55,6 +57,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
             }
         })
     }
+    ///get Centre of map
     func getCentre() -> (Float,Float){
         var lat: Float = 0.0
         var long: Float = 0.0
@@ -66,6 +69,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         long = long/Float(trucks.count)
         return (lat,long)
     }
+    ///Setup the map view
     func setupMap(){
         // Do any additional setup after loading the view.
         // Create a GMSCameraPosition that tells the map to display the
@@ -99,24 +103,24 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         }
     }
     
-    //changing to map/list via button click
+    ///changing to map/list via button click
     @IBAction func changeToMapOrList(_ sender: Any) {
         if list.isHidden{
             map.isHidden = true
             list.isHidden = false
             search.isHidden = false
             constraint.constant = 56
-            changeView.setImage(UIImage(named: mapImage), for: .normal)
+            changeView.setImage(UIImage(named: "mapImage"), for: .normal)
         }
         else{
             map.isHidden = false
             list.isHidden = true
             search.isHidden = true
             constraint.constant = 8
-            changeView.setImage(UIImage(named: listImage), for: .normal)
+            changeView.setImage(UIImage(named: "listImage"), for: .normal)
         }
     }
-    
+    ///show search box
     @IBAction func searchClicked(_ sender: Any) {
         topView.isHidden = true
         searchBar.isHidden = false
@@ -132,6 +136,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filterTrucks(searchText)
     }
+    ///filter trucks according to search query
     func filterTrucks(_ query : String){
         filteredTrucks.removeAll()
         for item in trucks{
@@ -168,6 +173,10 @@ extension ViewController{
         }
         else{
             cell.truck = trucks[indexPath.row]
+        }
+        let time = Date(timeIntervalSince1970: TimeInterval(cell.truck.lastWaypoint.updateTime/1000))
+        if Date().hours(from: time) > 4{
+            cell.contentView.backgroundColor = .red
         }
         return cell
     }
