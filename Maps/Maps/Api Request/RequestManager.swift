@@ -13,8 +13,8 @@ class RequestManager {
     static let shared = RequestManager()
     
     
-    func getData() {
-    let url = URL(string: "https://api.mystral.in/tt/mobile/logistics/searchTrucks?auth-company=PCH&companyId=33&deactivated=false&key=g2qb5jvucg7j8skpu5q7ria0mu&q-expand=true&q-include=lastRunningState,lastWaypoint")!
+    func getData(completion: @escaping (([Truck]) -> ())) {
+    let url = URL(string: api_url)!
 
 
        //create the session object
@@ -23,7 +23,7 @@ class RequestManager {
        //now create the URLRequest object using the url object
        let request = URLRequest(url: url)
 
-        var trucks: [Truck]?
+        var trucks: [Truck] = []
        //create dataTask using the session object to send data to the server
        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
 
@@ -42,7 +42,7 @@ class RequestManager {
                result = try JSONDecoder().decode(Response.self, from: data)
               if let result = result{
                   trucks = result.data
-                  
+                  completion(trucks)
               }
               else{
                   print("Failed to parse")

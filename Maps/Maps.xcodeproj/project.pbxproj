@@ -10,6 +10,7 @@
 		22699FB2FF0267D2BBDAA352 /* Pods_Maps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5267146092EF637FE8048AF4 /* Pods_Maps.framework */; };
 		2F230EA5597B0CF9EE039A7B /* Pods_Maps_MapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB336AB9E4220BACA2C92AFA /* Pods_Maps_MapsUITests.framework */; };
 		5DF4E23BB056025BBF032C09 /* Pods_MapsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA4FB59DEB58824E6556C84 /* Pods_MapsTests.framework */; };
+		AC9499532763B5EF003252DD /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9499522763B5EF003252DD /* constant.swift */; };
 		ACE7B26E2761C745000B1AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B26D2761C745000B1AAC /* AppDelegate.swift */; };
 		ACE7B2702761C745000B1AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B26F2761C745000B1AAC /* SceneDelegate.swift */; };
 		ACE7B2722761C745000B1AAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B2712761C745000B1AAC /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		79B1A5B3E898DC0F8FF14BE3 /* Pods-MapsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsTests.debug.xcconfig"; path = "Target Support Files/Pods-MapsTests/Pods-MapsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7DA4FB59DEB58824E6556C84 /* Pods_MapsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		819D4C5538FE4D0C4806F287 /* Pods-MapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsTests.release.xcconfig"; path = "Target Support Files/Pods-MapsTests/Pods-MapsTests.release.xcconfig"; sourceTree = "<group>"; };
+		AC9499522763B5EF003252DD /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		ACE7B26A2761C745000B1AAC /* Maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE7B26D2761C745000B1AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE7B26F2761C745000B1AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				ACE7B26D2761C745000B1AAC /* AppDelegate.swift */,
 				ACE7B26F2761C745000B1AAC /* SceneDelegate.swift */,
 				ACE7B2712761C745000B1AAC /* ViewController.swift */,
+				AC9499522763B5EF003252DD /* constant.swift */,
 				ACE7B2A7276241A4000B1AAC /* VehicleCell */,
 				ACE7B2A527624156000B1AAC /* Api Request */,
 				ACE7B2732761C745000B1AAC /* Main.storyboard */,
@@ -436,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE7B29F2761F851000B1AAC /* Vehicle.swift in Sources */,
+				AC9499532763B5EF003252DD /* constant.swift in Sources */,
 				ACE7B2722761C745000B1AAC /* ViewController.swift in Sources */,
 				ACE7B26E2761C745000B1AAC /* AppDelegate.swift in Sources */,
 				ACE7B2A427623E89000B1AAC /* RequestManager.swift in Sources */,
